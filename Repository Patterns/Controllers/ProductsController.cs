@@ -42,9 +42,9 @@ namespace Repository_Patterns.Controllers
         [Route("[Action]/{prodId}")]
         public async Task<IActionResult> DeleteProduct(int prodId)
         {
-            var user = _productRepository.GetProductById(prodId);
-            bool isDeleted = await _productRepository.DeleteAsync(user);
-            return Ok(isDeleted ? "User Deleted Sucessfully." : "User Deletion Failed.");
+            var product = _productRepository.GetProductById(prodId);
+            bool isDeleted = await _productRepository.DeleteAsync(product);
+            return Ok(isDeleted ? "product Deleted Sucessfully." : "product Deletion Failed.");
         }
     }
 }
