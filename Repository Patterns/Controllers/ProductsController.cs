@@ -33,7 +33,7 @@ namespace Repository_Patterns.Controllers
         [HttpPost]
         [Route("[Action]")]
         public async Task<IActionResult> CreateProduct(Product product)
-        {
+        { 
             bool isCreated = await _productRepository.AddAsync(product);
             return Ok(isCreated ? "product Created Sucessfully." : "product Creation Failed.");
         }
